@@ -23,9 +23,9 @@ app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect(
-  "mongodb+srv://paloadarsh_db_user:NAKI143ADARSH@bloggr.p0igni5.mongodb.net/?retryWrites=true&w=majority&appName=Bloggr"
-)
+mongoose.connect(process.env.MONGODB_URI)
+
+
 .then(() => {
   console.log("MongoDB Connected!");
 })
