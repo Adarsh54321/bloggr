@@ -1,0 +1,161 @@
+// Feed Page Logic
+const postButton = document.getElementById("postButton");
+
+if (postButton) {
+    loadPosts();
+
+    postButton.addEventListener("click", async () => {
+        const content = document.getElementById("postContent").value.trim();
+
+        if (content === "") {
+            alert("Please write something.");
+            return;
+        }
+
+        const token = localStorage.getItem("token");
+
+        try {
+            const response = await fetch("http://localhost:3000/posts", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                body: JSON.stringify({
+                    title: "Untitled",
+                    content
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.message);
+                return;
+            }
+
+            document.getElementById("postContent").value = "";
+
+            loadPosts();
+
+        } catch (error) {
+            console.log(error);
+            alert("Failed to create post");
+        }
+    });
+}
+
+async function loadPosts() {
+    const postsDiv = document.getElementById("posts");
+
+    if (!postsDiv) return;
+
+    try {
+        const response = await fetch("http://localhost:3000/posts");
+
+        const posts = await response.json();
+
+        postsDiv.innerHTML = "";
+
+        posts.forEach(post => {
+            postsDiv.innerHTML += `
+                <div class="post">
+                    <strong>${post.author.username}</strong>
+                    <p>${post.content}</p>
+                </div>
+            `;
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// Register User
+const registerForm = document.getElementById("registerForm");
+
+if (registerForm) {
+    registerForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            const response = await fetch("http://localhost:3000/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            });
+
+            const data = await response.json();
+
+            alert(data.message);
+
+            if (response.ok) {
+                window.location.href = "login.html";
+            }
+
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong");
+        }
+    });
+}
+
+// Login User
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.message);
+                return;
+            }
+
+            localStorage.setItem("token", data.token);
+
+            alert("Login successful!");
+
+            window.location.href = "feed.html";
+
+        } catch (error) {
+            console.log(error);
+            alert("Something went wrong");
+        }
+    });
+}
+
+// Logout
+const logoutButton = document.getElementById("logoutButton");
+
+if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+        localStorage.removeItem("token");
+        window.location.href = "login.html";
+    });
+}
