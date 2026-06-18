@@ -1,91 +1,103 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bloggr</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    <title>Bloggr</title>
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    color:white;
-    text-align:center;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-.container{
-    padding:40px;
-}
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
 
-h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
+        .container {
+            padding: 40px;
+        }
 
-p{
-    font-size:1.2rem;
-    margin-bottom:30px;
-    opacity:0.9;
-}
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+        }
 
-button{
-    padding:15px 35px;
-    font-size:1.1rem;
-    border:none;
-    border-radius:50px;
-    background:white;
-    color:#764ba2;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-}
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
 
-button:hover{
-    transform:scale(1.05);
-}
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
 
-.footer{
-    margin-top:25px;
-    opacity:0.8;
-    font-size:0.9rem;
-}
-</style>
+        button {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            background: white;
+            color: #764ba2;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 25px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-```
-<h1>🚀 Welcome to Adarsh's Bloggr</h1>
+        <!-- LOGO -->
+        <img src="assets/logo.png" alt="Bloggr Logo" class="logo">
 
-<p>
-    Share your thoughts, connect with friends,
-    and explore the Bloggr community.
-</p>
+        <h1>🚀 Welcome to Adarsh's Bloggr</h1>
 
-<button onclick="window.location.href='login.html'">
-    Get Started
-</button>
+        <p>
+            Share your thoughts, connect with friends,
+            and explore the Bloggr community.
+        </p>
 
-<div class="footer">
-    Built by Adarsh
-</div>
-```
+        <button onclick="window.location.href='login.html'">
+            Get Started
+        </button>
 
-</div>
+        <div class="footer">
+            Built by Adarsh
+        </div>
+
+    </div>
 
 </body>
 </html>
