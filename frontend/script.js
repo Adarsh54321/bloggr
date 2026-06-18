@@ -3,6 +3,17 @@ const API = "https://bloggr-9wuh.onrender.com";
 // Feed Page Logic
 const postButton = document.getElementById("postButton");
 
+const postContent = document.getElementById("postContent");
+
+if (postContent) {
+    postContent.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            postButton.click();
+        }
+    });
+}
+
 if (postButton) {
     loadPosts();
 
