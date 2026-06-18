@@ -3,16 +3,19 @@ const API = "https://bloggr-9wuh.onrender.com";
 // Feed Page Logic
 const postButton = document.getElementById("postButton");
 
-const postContent = document.getElementById("postContent");
+document.addEventListener("DOMContentLoaded", () => {
+    const postContent = document.getElementById("postContent");
+    const postButton = document.getElementById("postButton");
 
-if (postContent) {
-    postContent.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) {
-            e.preventDefault();
-            postButton.click();
-        }
-    });
-}
+    if (postContent && postButton) {
+        postContent.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                postButton.click();
+            }
+        });
+    }
+});
 
 if (postButton) {
     loadPosts();
