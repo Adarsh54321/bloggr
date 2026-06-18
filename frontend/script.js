@@ -59,7 +59,7 @@ async function loadPosts() {
 
         postsDiv.innerHTML = "";
 
-        posts.forEach(post => {
+        posts.slice(0, 7).forEach(post => {
             postsDiv.innerHTML += `
                 <div class="post">
                     <strong>${post.author.username}</strong>
