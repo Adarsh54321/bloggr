@@ -1,3 +1,4 @@
+const API = "https://bloggr-9wuh.onrender.com";
 // Feed Page Logic
 const postButton = document.getElementById("postButton");
 
@@ -15,7 +16,7 @@ if (postButton) {
         const token = localStorage.getItem("token");
 
         try {
-            const response = await fetch("http://localhost:3000/posts", {
+            const response = await fetch("http://https://bloggr-9wuh.onrender.com/posts", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -51,7 +52,7 @@ async function loadPosts() {
     if (!postsDiv) return;
 
     try {
-        const response = await fetch("http://localhost:3000/posts");
+        const response = await fetch("http://https://bloggr-9wuh.onrender.com/posts");
 
         const posts = await response.json();
 
@@ -82,7 +83,7 @@ if (registerForm) {
         const password = document.getElementById("password").value;
 
         try {
-            const response = await fetch("http://localhost:3000/register", {
+            const response = await fetch("http://https://bloggr-9wuh.onrender.com/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -119,7 +120,7 @@ if (loginForm) {
         const password = document.getElementById("password").value;
 
         try {
-            const response = await fetch("http://localhost:3000/login", {
+            const response = await fetch("http://https://bloggr-9wuh.onrender.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
