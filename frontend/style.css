@@ -3,6 +3,8 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Segoe UI',sans-serif;
+
+    cursor:url("cursor.png") 16 16, auto;
 }
 
 body{
@@ -94,6 +96,13 @@ textarea{
     resize:none;
 }
 
+button,
+a,
+input[type="submit"],
+input[type="button"]{
+    cursor:url("cursor.png") 16 16, pointer;
+}
+
 button{
     width:100%;
     padding:14px;
@@ -103,8 +112,6 @@ button{
 
     font-weight:bold;
     font-size:15px;
-
-    cursor:pointer;
 
     background:linear-gradient(
         135deg,
