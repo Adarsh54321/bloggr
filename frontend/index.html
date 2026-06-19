@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloggr</title>
-    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img.png">
+
     <style>
         * {
             margin: 0;
@@ -26,28 +29,31 @@
 
         .container {
             padding: 40px;
+            max-width: 800px;
         }
 
         .logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-            border-radius: 15px;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
 
         p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.3rem;
+            margin-bottom: 35px;
             opacity: 0.9;
         }
 
         button {
-            padding: 15px 35px;
+            padding: 16px 40px;
             font-size: 1.1rem;
             border: none;
             border-radius: 50px;
@@ -63,26 +69,24 @@
         }
 
         .footer {
-            margin-top: 25px;
+            margin-top: 30px;
             opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
     </style>
-
 </head>
 
 <body>
 
     <div class="container">
 
-        <!-- LOGO -->
-        <img src="assets/logo.png" alt="Bloggr Logo" class="logo">
+        <!-- Bloggr Logo -->
+        <img src="img.png" alt="Bloggr Logo" class="logo">
 
         <h1>🚀 Welcome to Adarsh's Bloggr</h1>
 
         <p>
-            Share your thoughts, connect with friends,
-            and explore the Bloggr community.
+            Share your thoughts, connect with friends, and explore the Bloggr community.
         </p>
 
         <button onclick="window.location.href='login.html'">
@@ -96,4 +100,5 @@
     </div>
 
 </body>
+
 </html>
