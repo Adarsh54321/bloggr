@@ -4,6 +4,12 @@
     <title>Bloggr - Feed</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        a h1 {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -11,30 +17,30 @@
     <div class="feed-container">
 
         <a href="index.html" style="text-decoration:none; color:inherit;">
-    <h1>Bloggr Feed</h1>
+            <h1>Bloggr Feed</h1>
         </a>
 
-    <textarea
-        id="postContent"
-        rows="3"
-        placeholder="What's on your mind?"
-    ></textarea>
+        <textarea
+            id="postContent"
+            rows="3"
+            placeholder="What's on your mind?"
+        ></textarea>
 
-    <button id="postButton">
-        Post
-    </button>
+        <button id="postButton">
+            Post
+        </button>
 
-    <hr>
+        <hr>
 
-    <div id="posts" class="posts-container"></div>
+        <div id="posts" class="posts-container"></div>
 
-    <button id="logoutButton">
-        Logout
-    </button>
+        <button id="logoutButton">
+            Logout
+        </button>
 
-</div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

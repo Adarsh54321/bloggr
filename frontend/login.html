@@ -3,43 +3,52 @@
 <head>
     <title>Bloggr - Login</title>
     <link rel="icon" type="image/png" href="logo.png">
-    
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        a h1 {
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="container">
+
         <a href="index.html" style="text-decoration:none; color:inherit;">
-    <h1>Bloggr</h1>
+            <h1>Bloggr</h1>
         </a>
-<h2>Welcome Back</h2>
 
-<form id="loginForm">
+        <h2>Welcome Back</h2>
 
-    <input
-        type="text"
-        id="username"
-        placeholder="Username"
-        required
-    >
+        <form id="loginForm">
 
-    <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        required
-    >
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                required
+            >
 
-    <button type="submit">
-        Login
-    </button>
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
 
-</form>
+            <button type="submit">
+                Login
+            </button>
 
-<p>
-    New here?
-    <a href="register.html">Create Account</a>
-</p>
+        </form>
+
+        <p>
+            New here?
+            <a href="register.html">Create Account</a>
+        </p>
+
     </div>
 
     <script src="script.js"></script>
