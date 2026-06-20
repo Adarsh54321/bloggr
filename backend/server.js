@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 
 app.post("/register", async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { username,email,password } = req.body;
 
     const existingUser = await User.findOne({ username });
 
@@ -55,8 +55,9 @@ app.post("/register", async (req, res) => {
 
     const newUser = new User({
     username,
+    email,
     password: hashedPassword
-    });
+  });
 
     await newUser.save();
 
