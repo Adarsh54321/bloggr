@@ -71,16 +71,17 @@ async function loadPosts() {
 
         const posts = await response.json();
 
-        postsDiv.innerHTML = "";
+        let html = "";
 
         posts.slice(0, 7).forEach(post => {
-            postsDiv.innerHTML += `
-                <div class="post">
+         html += `
+              <div class="post">
                     <strong>${post.author.username}</strong>
                     <p>${post.content}</p>
-                </div>
-            `;
+              </div>`;
         });
+
+postsDiv.innerHTML = html;
 
     } catch (error) {
         console.log(error);
@@ -154,8 +155,6 @@ if (loginForm) {
             }
 
             localStorage.setItem("token", data.token);
-
-            alert("Login successful!");
 
             window.location.href = "feed.html";
 
